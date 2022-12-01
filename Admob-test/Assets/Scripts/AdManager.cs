@@ -23,9 +23,9 @@ public class AdManager : MonoBehaviour
     void Start()
     {
 #if UNITY_ANDROID
-        string app_ID = "ca-app-pub-5395125219772976~5579836647";
+        string app_ID = "/*put app_ID from your account on Admob*/";
 #else
-        string app_ID = "ca-app-pub-5395125219772976~9595173082";
+        string app_ID = "/*put app_ID from your account on Admob*/";
 #endif
         MobileAds.Initialize(initStatus => 
         {
