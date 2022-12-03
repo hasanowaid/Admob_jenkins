@@ -14,11 +14,7 @@ public class AdManager : MonoBehaviour
     private RewardedInterstitialAd rewardedInterstitialAd;
     [SerializeField] GameObject alertPanel;
     [SerializeField] Text message;
-    private NativeAd nativeAd;
-    private bool nativeAdLoaded;
-    [SerializeField] RawImage adIcon, adImage;
-    [SerializeField] Text head, body;
-    [SerializeField] GameObject nativePanel;
+
 
     void Start()
     {
@@ -111,7 +107,7 @@ public class AdManager : MonoBehaviour
         MonoBehaviour.print(
             "HandleRewardedAdRewarded event received for "
                         + amount.ToString() + " " + type);
-        Alert( amount.ToString() + " " + type);
+        Alert(type + " " + amount.ToString());
     }
     public void HandleOnAdOpening(object sender, EventArgs args)
     {
@@ -224,8 +220,8 @@ public class AdManager : MonoBehaviour
     private void userEarnedRewardCallback(Reward reward)
     {
         // TODO: Reward the user.
-        Debug.Log(reward);
-        Alert(reward.Type);
+        Debug.Log(reward.Amount);
+        Alert(reward.Type +" " + reward.Amount);
     }
 
 #endregion
